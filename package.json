@@ -1,10 +1,11 @@
 {
-  "name": "vue-tailwind-components",
-  "version": "0.1.0",
-  "private": true,
+  "name": "vue-tailwind-styled-components",
+  "version": "0.1.1",
+  "private": false,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
+    "build-bundle": "vue-cli-service build --target lib --name vue-tailwind-components ./src/components/index.js && npx tailwind build src/assets/styles.css -o dist/css/styles.css -c ./tailwind.config.js",
     "lint": "vue-cli-service lint",
     "test:unit": "vue-cli-service test:unit"
   },
@@ -24,6 +25,15 @@
     "babel-jest": "^23.6.0",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
+    "tailwindcss": "^1.0.4",
     "vue-template-compiler": "^2.6.10"
-  }
+  },
+  "main": "./dist/vue-tailwind-components.common.js",
+  "files": [
+    "dist/*",
+    "src/*",
+    "public/*",
+    "*.json",
+    "*.js"
+  ]
 }
